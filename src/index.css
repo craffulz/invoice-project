@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('./assets/fonts/Spartan.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SpartanBold";
+  src: url('./assets/fonts/Spartan.ttf');
+  font-style: italic;
+}
