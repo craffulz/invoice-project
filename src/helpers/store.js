@@ -13,6 +13,8 @@ const useStore = create((set, get) => {
     }
   };
 
+  const initializeInvoices = JSON.parse(localStorage.getItem("invoices")) || [];
+
   return {
     /**Para actualizar el estado.
      * Esto es una medida provisional, ya que solo nos sirve para actualizar la interfaz.
@@ -51,14 +53,18 @@ const useStore = create((set, get) => {
     },
 
     //invoices is for locate all invoices and be able to render them
-    invoices: [],
+    invoices:
+      typeof initializeInvoices === "string" ? [] : [...initializeInvoices],
     invoicesExists: () => {
       return get().invoices.length > 0;
     },
     addInvoice: (invoice) => {
       set((state) => {
+        const storageInvoices = [...state.invoices, invoice];
+        localStorage.setItem("invoices", JSON.stringify(storageInvoices));
+        console.log(localStorage.invoices);
         return {
-          invoices: [...state.invoices, invoice],
+          invoices: storageInvoices,
         };
       });
     },

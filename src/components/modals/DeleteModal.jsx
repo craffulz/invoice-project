@@ -4,6 +4,15 @@ const DeleteModal = () => {
   const { deleteClicked, deleteInvoice, viewInvoice, invoicePressed } =
     useStore();
 
+  const optionalModal = (option) => {
+    switch (option) {
+      case "markAsPaid":
+        break;
+      case "delete":
+        break;
+    }
+  };
+
   return (
     <div
       id="deleteModal"

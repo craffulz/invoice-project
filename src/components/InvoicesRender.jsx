@@ -4,7 +4,7 @@ import Invoice from "./Invoice";
 
 const InvoicesRender = () => {
   const { invoicesExists, invoices } = useStore();
-
+  console.log(invoices);
   return (
     <div
       id="main"
