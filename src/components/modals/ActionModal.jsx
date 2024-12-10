@@ -1,14 +1,32 @@
+/* eslint-disable react/prop-types */
 import useStore from "../../helpers/store";
 
-const DeleteModal = () => {
-  const { deleteClicked, deleteInvoice, viewInvoice, invoicePressed } =
-    useStore();
+const ActionModal = ({ optionSelected }) => {
+  const {
+    openModal,
 
-  const optionalModal = (option) => {
+    deleteInvoice,
+
+    changeStatus,
+
+    viewInvoice: invoice,
+    invoicePressed,
+  } = useStore();
+
+
+
+  const option = (option) => {
     switch (option) {
-      case "markAsPaid":
+      case "mark as PAID":
+        changeStatus(invoice.id, "paid");
+        openModal();
         break;
-      case "delete":
+      case "DELETE":
+        deleteInvoice(invoice.id);
+        openModal();
+        invoicePressed(false);
+        break;
+      case "edit":
         break;
     }
   };
@@ -23,21 +41,20 @@ const DeleteModal = () => {
         className="w-[300px] h-[200px] flex flex-col items-center justify-center bg-11 p-8 gap-y-8 rounded-xl"
       >
         <div id="messageModal" className="text-center">
-          <p>Are you sure you want to delete this invoice?</p>
+          <p>Are you sure you want to {optionSelected} this invoice?</p>
         </div>
         <div id="buttons" className="flex flex-row gap-12">
           <button
             onClick={() => {
-              deleteInvoice(viewInvoice.id);
-              deleteClicked();
-              invoicePressed();
+              option(optionSelected);
+              openModal(false);
             }}
-            className="font-bold text-white w-16 h-12 bg-9 rounded-xl"
+            className="font-bold text-white w-16 h-12 bg-9 rounded-xl hover:bg-10"
           >
             Yes
           </button>
           <button
-            onClick={deleteClicked}
+            onClick={() => openModal(false)}
             className="font-semibold text-white w-16 h-12 bg-7 rounded-xl"
           >
             No
@@ -48,4 +65,4 @@ const DeleteModal = () => {
   );
 };
 
-export default DeleteModal;
+export default ActionModal;

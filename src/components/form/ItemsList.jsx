@@ -44,7 +44,6 @@ const ItemsList = () => {
         id="button-add-item-container"
         onClick={() => {
           append(<ListItem />);
-          console.log("sisisisi");
         }}
       >
         <AddNewItem />

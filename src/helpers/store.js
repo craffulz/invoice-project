@@ -1,10 +1,7 @@
 import { create } from "zustand";
 
-//import json from "./assets/data/data.json";
-
 const useStore = create((set, get) => {
   const initialDarkMode = JSON.parse(localStorage.getItem("darkMode")) || false;
-  // Setear la clase 'dark' en el <html>
   const setDarkModeClass = (darkMode) => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -16,27 +13,19 @@ const useStore = create((set, get) => {
   const initializeInvoices = JSON.parse(localStorage.getItem("invoices")) || [];
 
   return {
-    /**Para actualizar el estado.
-     * Esto es una medida provisional, ya que solo nos sirve para actualizar la interfaz.
-     * Es decir, solo es para que el 'state' reciba un cambio de estado y actualice el componente,
-     * y asi podamos mostrar el status cambiado. De otro modo, creo que deberiamos crear un objeto factura
-     * y sobre este trabajar las actualizaciones de estado */
-    changedStatus: false,
-    changeStatus: () => {
-      set((state) => {
-        return { changedStatus: !state.chengedStatus };
-      });
-    },
-
+    //ESTE ES EL QUE HAY QUE CAMBIAR
     /**Este estado es para mostrar el modal de 'DELETE' */
-    lete: false,
-    deleteClicked: () => {
-      set((state) => {
-        return { lete: !state.lete };
+    modalOption: false,
+    openModal: (option) => {
+      set(() => {
+        return { modalOption: option };
       });
     },
 
-    /**Este estado es para mostrar o no el view de la factura clickeada */
+    /**
+     * viewInvoice is to open the invoice's view.
+     * When it is true, a view appear in the interface.
+     */
     viewInvoice: false,
     invoicePressed: (invoice) => {
       set(() => {
@@ -44,7 +33,10 @@ const useStore = create((set, get) => {
       });
     },
 
-    //The state and function below is to show the 'add invoice' modal
+    /**
+     * Similar to the previous one. This one is to render the form
+     * to add a new invoice.
+     */
     showNewInvoiceLayout: false,
     newInvoiceButtonPressed: () => {
       set((state) => {
@@ -52,9 +44,12 @@ const useStore = create((set, get) => {
       });
     },
 
-    //invoices is for locate all invoices and be able to render them
-    invoices:
-      typeof initializeInvoices === "string" ? [] : [...initializeInvoices],
+    /**
+     * The code below is all that you can do with an invoice.
+     * Store invoices in an array, add an invoice to the array,
+     * delete it or change the status between 'paid', 'pending' or 'draft'
+     */
+    invoices: initializeInvoices.length > 0 ? [...initializeInvoices] : [],
     invoicesExists: () => {
       return get().invoices.length > 0;
     },
@@ -62,21 +57,46 @@ const useStore = create((set, get) => {
       set((state) => {
         const storageInvoices = [...state.invoices, invoice];
         localStorage.setItem("invoices", JSON.stringify(storageInvoices));
-        console.log(localStorage.invoices);
+
         return {
           invoices: storageInvoices,
         };
       });
     },
-
     deleteInvoice: (id) => {
       set((state) => {
         //Buscar invoice
         const index = state.invoices.findIndex((invoice) => invoice.id === id);
-        return { state: state.invoices.splice(index, 1) };
+        state.invoices.splice(index, 1);
+        const storageInvoices = state.invoices;
+
+       
+
+        localStorage.invoices.length > 0
+          ? localStorage.setItem("invoices", JSON.stringify(storageInvoices))
+          : localStorage.removeItem("invoices");
+
+        return { state: storageInvoices };
       });
     },
-    //darkMode to toggle between dark and normal mode
+    changeStatus: (iD, status) => {
+      set((state) => {
+        const invoices = state.invoices.map((invoice) => {
+          return invoice.id === iD ? { ...invoice, status: status } : invoice;
+        });
+
+        localStorage.setItem("invoices", JSON.stringify(invoices));
+
+        return {
+          invoices: invoices,
+          viewInvoice: invoices.find((invoice) => invoice.id === iD),
+        };
+      });
+    },
+
+    /**
+     * DarkMode it is to change the mode of the interface, light or dark.
+     */
     darkMode: initialDarkMode,
     toggleDarkMode: () => {
       set((state) => {

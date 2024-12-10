@@ -18,7 +18,6 @@ const FilterBy = () => {
       <div
         className="flex flex-row items-center gap-3"
         onClick={() => {
-          console.log("Clicked");
           setDrop((prev) => !prev);
         }}
       >

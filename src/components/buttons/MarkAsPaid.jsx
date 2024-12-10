@@ -1,8 +1,13 @@
+import useStore from "../../helpers/store";
 const MarkAsPaid = () => {
+  const { openModal } = useStore();
   return (
     <button
       id="MarkAsPaid"
       className="flex flex-row w-[149px] sm:w-[131px] h-[48px] rounded-full bg-1 hover:bg-2  p-2 items-center justify-center gap-3"
+      onClick={() => {
+        openModal("mark as PAID");
+      }}
     >
       <div
         id="text"

@@ -43,25 +43,25 @@ const InvoiceData = () => {
             </option>
             <option
               value="1"
-              className="p-4 font-spartan font-bold text-black hover:text-3"
+              className="p-4 font-spartan font-bold  hover:text-3"
             >
               Net 1 Day
             </option>
             <option
               value="7"
-              className="p-4 font-spartan font-bold text-black hover:text-3"
+              className="p-4 font-spartan font-bold  hover:text-3"
             >
               Net 7 Days
             </option>
             <option
               value="14"
-              className="p-4 font-spartan font-bold text-black hover:text-3"
+              className="p-4 font-spartan font-bold  hover:text-3"
             >
               Net 14 Days
             </option>
             <option
               value="30"
-              className="p-4 font-spartan font-bold text-black hover:text-3"
+              className="p-4 font-spartan font-bold  hover:text-3"
             >
               Net 30 Days
             </option>

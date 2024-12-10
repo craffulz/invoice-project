@@ -1,18 +1,12 @@
 import useStore from "../../helpers/store";
 import arrowLeft from "../../assets/icon-arrow-left.svg";
 import Status from "../buttons/Status";
-import Edit from "../buttons/Edit";
-import Delete from "../buttons/Delete";
-import MarkAsPaid from "../buttons/MarkAsPaid";
+
 import ItemRecipe from "../ItemRecipe";
+import ActionButtons from "../ActionButtons";
 /**Acuerdate de quitar los margenes inferiores que no necesites realmente */
 const InvoiceView = () => {
-  const {
-    viewInvoice: invoice,
-    invoicePressed,
-    deleteClicked,
-    changeStatus,
-  } = useStore();
+  const { viewInvoice: invoice, invoicePressed } = useStore();
 
   return (
     <div
@@ -48,26 +42,7 @@ const InvoiceView = () => {
         </div>
       </div>
 
-      <div
-        id="buttons-container"
-        className="flex flex-row h-[91px] row-start-4 items-center justify-around px-5 col-span-2 sm:col-span-1 sm:col-start-2 sm:row-start-2 sm:rounded-l-none sm:mr-4
-      bg-white dark:bg-3 rounded-xl"
-      >
-        <div>
-          <Edit />
-        </div>
-        <div onClick={deleteClicked}>
-          <Delete />
-        </div>
-        <div
-          onClick={() => {
-            invoice.status = "paid";
-            changeStatus();
-          }}
-        >
-          <MarkAsPaid />
-        </div>
-      </div>
+      <ActionButtons />
 
       <div
         id="info-container"

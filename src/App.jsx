@@ -4,12 +4,10 @@ import InvoicesRender from "./components/InvoicesRender";
 import AddInvoiceModal from "./components/modals/AddInvoiceModal";
 import InvoiceView from "./components/modals/InvoiceView";
 import useStore from "./helpers/store";
-import DeleteModal from "./components/modals/DeleteModal";
+import ActionModal from "./components/modals/ActionModal";
 
 function App() {
-  const {  viewInvoice, lete ,showNewInvoiceLayout} = useStore();
-
-  console.log(showNewInvoiceLayout)
+  const { viewInvoice, modalOption, showNewInvoiceLayout } = useStore();
 
   return (
     <div
@@ -38,7 +36,7 @@ function App() {
            bg-11 dark:bg-12 transition-colors duration-300"
         >
           <InvoiceView />
-          {lete && <DeleteModal />}
+          {modalOption && <ActionModal optionSelected={modalOption} />}
         </div>
       )}
 
