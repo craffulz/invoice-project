@@ -37,17 +37,17 @@ const useStore = create((set, get) => {
      * Similar to the previous one. This one is to render the form
      * to add a new invoice.
      */
-    showNewInvoiceLayout: false,
-    newInvoiceButtonPressed: () => {
-      set((state) => {
-        return { showNewInvoiceLayout: !state.showNewInvoiceLayout };
+    actionFormModal: false,
+    openFormModal: (action) => {
+      set(() => {
+        return { actionFormModal: action };
       });
     },
 
     /**
      * The code below is all that you can do with an invoice.
      * Store invoices in an array, add an invoice to the array,
-     * delete it or change the status between 'paid', 'pending' or 'draft'
+     * delete it or change the status from 'pending' to 'paid', or edit it.
      */
     invoices: initializeInvoices.length > 0 ? [...initializeInvoices] : [],
     invoicesExists: () => {
@@ -70,8 +70,6 @@ const useStore = create((set, get) => {
         state.invoices.splice(index, 1);
         const storageInvoices = state.invoices;
 
-       
-
         localStorage.invoices.length > 0
           ? localStorage.setItem("invoices", JSON.stringify(storageInvoices))
           : localStorage.removeItem("invoices");
@@ -91,6 +89,18 @@ const useStore = create((set, get) => {
           invoices: invoices,
           viewInvoice: invoices.find((invoice) => invoice.id === iD),
         };
+      });
+    },
+    editInvoice: (invoiceEdited) => {
+      set((state) => {
+        //Buscar en nuestro arrray de invoices el id
+        const invoices = state.invoices.map((invoice) => {
+          return invoice.id === invoiceEdited.id ? invoiceEdited : invoice;
+        });
+
+        localStorage.setItem("invoices", JSON.stringify(invoices));
+
+        return { invoices: invoices };
       });
     },
 

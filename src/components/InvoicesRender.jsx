@@ -1,10 +1,13 @@
 import useStore from "../helpers/store";
 import empty from "./../assets/illustration-empty.svg";
 import Invoice from "./Invoice";
-
+import { useState } from "react";
 const InvoicesRender = () => {
   const { invoicesExists, invoices } = useStore();
-  
+  const [width, setWidth] = useState(null);
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+  });
   return (
     <div
       id="main"
@@ -22,7 +25,7 @@ const InvoicesRender = () => {
               There is nothing here
             </h2>
             <p className="dark:text-5 font-spartan w-[173px] h-[31px] text-[13px] text-center self-center">
-              Create an invoice by clicking the <strong>New</strong> button and
+              Create an invoice by clicking the <strong>{width > 640 ? "New Invoice" : "New"}</strong> button and
               get started
             </p>
           </div>

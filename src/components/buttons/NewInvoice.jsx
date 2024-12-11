@@ -3,7 +3,7 @@ import plus from "./../../assets/icon-plus.svg";
 import { useEffect, useState } from "react";
 import useStore from "../../helpers/store";
 const NewInvoice = () => {
-  const { newInvoiceButtonPressed } = useStore();
+  const { openFormModal } = useStore();
   const [width, setWidth] = useState(null);
 
   useEffect(() => setWidth(window.innerWidth), []);
@@ -12,10 +12,10 @@ const NewInvoice = () => {
     setWidth(window.innerWidth);
   });
 
-  return ( 
+  return (
     <button
       className="flex flex-row w-[90px] sm:w-[150px] h-[48px] rounded-full bg-1 hover:bg-2 p-2 items-center"
-      onClick={newInvoiceButtonPressed}
+      onClick={() => {openFormModal("new")}}
     >
       <div id="sum" className="flex flex-col w-8 h-8 bg-white rounded-full">
         <img

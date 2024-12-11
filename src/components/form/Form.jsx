@@ -13,23 +13,42 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { invoiceObjectGenerator } from "../../helpers/invoiceObjectGenerator";
 import { idGenerator } from "../../helpers/idGenerator";
 const Form = () => {
-  const { newInvoiceButtonPressed, addInvoice } = useStore();
+  const {
+    openFormModal,
+    invoicePressed,
+    addInvoice,
+    editInvoice,
+    actionFormModal,
+    viewInvoice: invoice,
+  } = useStore();
+
+  const defValues = actionFormModal === "new" ? defaultValues : invoice;
 
   const methods = useForm({
     mode: "onSubmit",
     resolver: zodResolver(schema),
-    defaultValues: defaultValues,
+    defaultValues: defValues,
   });
 
   const onSubmit = (data) => {
     console.log("form submited", data);
-    //Creamos id
-    const id = idGenerator();
-    //Enviamos los datos a la store
-    addInvoice(invoiceObjectGenerator(data, id));
-    //Al hacer submit cerramos el formulario
-    newInvoiceButtonPressed();
-    //Al hacer submit mostrar mostrar un mensaje de que la factura ha sido aniadida
+
+    if (actionFormModal === "new") {
+      //Creamos id
+      const id = idGenerator();
+      //Enviamos los datos a la store
+      addInvoice(invoiceObjectGenerator(data, id));
+      //Al hacer submit cerramos el formulario
+      openFormModal(false);
+      //Al hacer submit mostrar mostrar un mensaje de que la factura ha sido aniadida
+    } else if (actionFormModal === "edit") {
+      //Metodo de la store que modifica todos los campos de la invoice pasando como argumento
+      // la invoice creada con el mismo id que tenia antes
+      const invoiceEdited = invoiceObjectGenerator(data, invoice.id);
+      editInvoice(invoiceEdited);
+      openFormModal(false);
+      invoicePressed(invoiceEdited);
+    }
   };
 
   const onError = (error) => {
@@ -55,7 +74,9 @@ const Form = () => {
             <div
               id="SaveAsDraft-container"
               className="self-start"
-              onClick={newInvoiceButtonPressed}
+              onClick={() => {
+                openFormModal(false);
+              }}
             >
               <Discard />
             </div>

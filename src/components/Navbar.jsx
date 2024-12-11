@@ -6,6 +6,7 @@ import useStore from "../helpers/store";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useStore();
+  console.log("Rendering Navbar");
 
   return (
     <nav
