@@ -34,7 +34,7 @@ function App() {
         <div
           id="viewInvoiceModal-container"
           className="absolute z-40 
-          flex flex-col w-screen h-screen overflow-scroll scrollbar-none top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
+          flex flex-col w-screen h-screen overflow-scroll top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
            bg-11 dark:bg-12 transition-colors duration-300"
         >
           <InvoiceView />
