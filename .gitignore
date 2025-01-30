@@ -7,6 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+invoice_app
+invoice_app_figma
 node_modules
 dist
 dist-ssr
