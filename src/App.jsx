@@ -9,12 +9,10 @@ import ActionModal from "./components/modals/ActionModal";
 function App() {
   const { viewInvoice, modalOption, actionFormModal } = useStore();
 
- 
-
   return (
     <div
       id="body"
-      className="flex flex-col lg:flex-row h-screen w-screen bg-11 dark:bg-12 transition-colors duration-300 overflow-hidden"
+      className="relative flex flex-col lg:flex-row h-screen w-screen bg-11 dark:bg-12 transition-colors duration-300 overflow-scroll scrollbar-none"
     >
       <div id="navbar" className="flex">
         <Navbar />
@@ -23,7 +21,8 @@ function App() {
       {actionFormModal && (
         <div
           id="newInvoiceModal-container"
-          className="flex flex-col sm:flex-row fixed z-50 h-screen w-screen top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
+          className="flex flex-col sm:flex-row fixed z-50 w-screen h-screen top-[72px] 
+          sm:top-[80px] lg:top-0 lg:left-[103px] 
            bg-black bg-opacity-50 transition-colors duration-300"
         >
           <AddInvoiceModal />
@@ -34,7 +33,8 @@ function App() {
       {viewInvoice && (
         <div
           id="viewInvoiceModal-container"
-          className="flex flex-col flex-grow fixed z-40 h-screen w-screen top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
+          className="absolute z-40 
+          flex flex-col w-screen h-screen overflow-scroll scrollbar-none top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
            bg-11 dark:bg-12 transition-colors duration-300"
         >
           <InvoiceView />
@@ -44,7 +44,7 @@ function App() {
 
       <div
         id="content"
-        className="flex flex-col grow relative overflow-hidden lg:flex-grow-0 py-10 lg:py-16 w-[327px] sm:w-[672px] lg:w-[730px] gap-y-10 xl:w-[730px] mx-auto sm:p-12 md:p-none"
+        className="flex flex-col overflow-hidden lg:flex-grow-0 py-10 lg:py-16 w-[327px] sm:w-[672px] lg:w-[730px] gap-y-10 xl:w-[730px] mx-auto sm:p-12 md:p-none"
       >
         <Header />
         <InvoicesRender />

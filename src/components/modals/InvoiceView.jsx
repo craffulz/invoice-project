@@ -11,42 +11,49 @@ const InvoiceView = () => {
   return (
     <div
       id="view-invoice-container"
-      className="grid grid-cols-2 mt-4 w-screen lg:w-[730px] lg:self-center gap-y-3 overflow-scroll scrollbar-none
-       font-spartan text-black dark:text-white"
+      className="
+      grid
+      mt-4 w-screen gap-y-3 overflow-scroll scrollbar-none
+      sm:grid sm:grid-cols-2    
+      lg:w-[730px] lg:self-center 
+      font-spartan text-black dark:text-white"
     >
       <div
         id="go-back"
-        className="flex flex-row h-[23px] mx-5 my-4 col-span-2 items-center"
+        className="flex flex-row h-[23px] mx-5 my-4 gap-5 items-center cursor-pointer col-span-2 row-start-1"
+        onClick={() => invoicePressed(false)}
       >
-        <div
-          className="flex flex-row h-[32px] gap-5 items-center cursor-pointer"
-          onClick={() => invoicePressed(false)}
-        >
-          <img
-            src={arrowLeft}
-            alt="go back arrow"
-            className="flex h-2 self-center"
-          />
-          <p className="flex font-spartan font-bold dark:text-white">Go back</p>
-        </div>
+        <img
+          src={arrowLeft}
+          alt="go back arrow"
+          className="flex h-2 self-center"
+        />
+        <p className="flex font-spartan font-bold dark:text-white">Go back</p>
       </div>
 
       <div
         id="status-container"
-        className="-sm h-[91px] flex mx-4 col-span-2 sm:col-span-1 sm:mr-0 sm:rounded-r-none
-         dark:bg-3 bg-white px-5 rounded-lg"
+        className="flex flex-row h-[91px] px-5 mx-4 rounded-lg justify-between items-center
+        col-span-2 row-start-2
+        sm:justify-normal sm:gap-8 sm:col-span-1 sm:mr-0 sm:rounded-r-none
+        dark:bg-3 bg-white "
       >
-        <div className="flex flex-row flex-grow justify-between sm:justify-normal sm:gap-8 items-center">
-          <span className="flex font-semibold text-7 dark:text-7">Status</span>
-          <Status status={invoice.status} />
-        </div>
+        <span className="flex font-semibold text-7 dark:text-7">Status</span>
+        <Status status={invoice.status} />
       </div>
 
-      <ActionButtons />
+      <div
+        id="action-buttons"
+        className="col-span-2 rounded-xl mx-4 
+        sm:col-span-1 sm:col-start-2 sm:row-start-2 sm:mr-4 sm:ml-0 sm:rounded-l-none
+      bg-white dark:bg-3 "
+      >
+        <ActionButtons />
+      </div>
 
       <div
         id="info-container"
-        className="shadow-sm flex flex-col mx-4 dark:bg-3 bg-white p-5 rounded-lg gap-y-8 col-span-2"
+        className="shadow-sm flex flex-col mx-4 dark:bg-3 bg-white p-5 rounded-lg gap-y-8 col-span-2 row-start-3"
       >
         <div
           id="id-project-name-client-adress"
