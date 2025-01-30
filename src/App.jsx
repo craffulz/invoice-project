@@ -34,7 +34,7 @@ function App() {
         <div
           id="viewInvoiceModal-container"
           className="absolute z-40 
-          flex flex-col w-screen h-screen overflow-scroll top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
+          flex flex-col w-screen h-screen overflow-x-hidden overflow-y-scroll top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
            bg-11 dark:bg-12 transition-colors duration-300"
         >
           <InvoiceView />
@@ -44,7 +44,7 @@ function App() {
 
       <div
         id="content"
-        className="flex flex-col overflow-hidden lg:flex-grow-0 py-10 lg:py-16 w-[327px] sm:w-[672px] lg:w-[730px] gap-y-10 xl:w-[730px] mx-auto sm:p-12 md:p-none"
+        className="flex flex-col lg:flex-grow-0 py-10 lg:py-16 w-[327px] sm:w-[672px] lg:w-[730px] gap-y-10 xl:w-[730px] mx-auto sm:p-12 md:p-none"
       >
         <Header />
         <InvoicesRender />

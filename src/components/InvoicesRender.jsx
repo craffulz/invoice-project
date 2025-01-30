@@ -11,13 +11,13 @@ const InvoicesRender = () => {
   return (
     <div
       id="main"
-      className="flex flex-col flex-grow gap-y-2 overflow-y-scroll 
+      className="flex flex-col grow gap-y-2 
         scrollbar-none"
     >
       {(!invoicesExists() && (
         <div
           id="empty-invoices"
-          className="flex flex-col w-[206px] h-[278px] sm:w-[241px] sm:h-[342px] text-center gap-y-14 self-center my-auto"
+          className="flex flex-col w-[206px] sm:w-[241px] text-center gap-y-14 self-center my-auto"
         >
           <img src={empty} alt="there is no invoices yet" />
           <div id="texts" className="flex flex-col gap-y-6">
