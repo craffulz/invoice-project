@@ -1,4 +1,4 @@
-import FilterBy from "./form/filterBy";
+import FilterBy from "./form/FilterBy";
 import NewInvoice from "./buttons/NewInvoice";
 import useStore from "../helpers/store";
 /**

@@ -9,7 +9,7 @@ import ActionModal from "./components/modals/ActionModal";
 function App() {
   const { viewInvoice, modalOption, actionFormModal } = useStore();
 
-  console.log("Rendering App", actionFormModal);
+ 
 
   return (
     <div
