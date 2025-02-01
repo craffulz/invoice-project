@@ -13,6 +13,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { invoiceObjectGenerator } from "../../helpers/invoiceObjectGenerator";
 import { idGenerator } from "../../helpers/idGenerator";
 const Form = () => {
+
+  console.log('Se renderiza el puto formulario')
+
   const {
     openFormModal,
     invoicePressed,
@@ -69,7 +72,7 @@ const Form = () => {
 
           <div
             id="submit-buttons-container"
-            className="flex flex-row mb-20 justify-between overflow-hidden"
+            className="flex flex-row mb-20 justify-between"
           >
             <div
               id="SaveAsDraft-container"

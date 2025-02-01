@@ -12,7 +12,8 @@ function App() {
   return (
     <div
       id="body"
-      className="relative flex flex-col lg:flex-row h-screen w-screen bg-11 dark:bg-12 transition-colors duration-300 overflow-scroll scrollbar-none"
+      className="relative flex flex-col lg:flex-row h-screen w-screen overflow-scroll scrollbar-none sm:overflow-hidden
+      bg-11 dark:bg-12 transition-colors duration-300 "
     >
       <div id="navbar" className="flex">
         <Navbar />
@@ -21,12 +22,11 @@ function App() {
       {actionFormModal && (
         <div
           id="newInvoiceModal-container"
-          className="flex flex-col sm:flex-row fixed z-50 w-screen h-screen top-[72px] 
+          className="flex flex-col sm:flex-row fixed z-50 w-screen h-screen top-[72px]
           sm:top-[80px] lg:top-0 lg:left-[103px] 
            bg-black bg-opacity-50 transition-colors duration-300"
         >
           <AddInvoiceModal />
-          <div id="sobrante" className="flex-grow"></div>
         </div>
       )}
 
