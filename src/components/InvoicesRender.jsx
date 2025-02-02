@@ -16,7 +16,7 @@ const InvoicesRender = () => {
       {(!invoicesExists() && (
         <div
           id="empty-invoices"
-          className="flex flex-col w-[206px] sm:w-[241px] text-center gap-y-14" 
+          className="flex flex-col w-[206px] sm:w-[241px] text-center gap-y-14 self-center" 
         >
           <img src={empty} alt="there is no invoices yet" />
 
