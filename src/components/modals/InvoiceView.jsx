@@ -12,10 +12,11 @@ const InvoiceView = () => {
     <div
       id="view-invoice-container"
       className="
+      
       grid
-      mt-4 w-screen gap-y-3 overflow-scroll scrollbar-none
-      sm:grid sm:grid-cols-2    
-      lg:w-[730px] lg:self-center 
+      gap-y-3
+      sm:grid sm:grid-cols-2 mt-3  
+      lg:w-[730px]  lg:self-center
       font-spartan text-black dark:text-white"
     >
       <div

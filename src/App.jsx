@@ -12,43 +12,57 @@ function App() {
   return (
     <div
       id="body"
-      className="relative flex flex-col lg:flex-row h-screen w-screen overflow-scroll scrollbar-none sm:overflow-hidden
-      bg-11 dark:bg-12 transition-colors duration-300 "
+      className=" 
+      flex flex-col lg:flex-row h-screen w-screen overflow-hidden
+      bg-11 dark:bg-12 transition-colors duration-300"
     >
       <div id="navbar" className="flex">
         <Navbar />
       </div>
-
-      {actionFormModal && (
+      <div
+        id="content"
+        className="relative
+        flex flex-col flex-grow overflow-y-scroll scrollbar-none"
+      >
         <div
-          id="newInvoiceModal-container"
-          className="flex flex-col sm:flex-row fixed z-50 w-screen h-screen top-[72px]
-          sm:top-[80px] lg:top-0 lg:left-[103px] 
-           bg-black bg-opacity-50 transition-colors duration-300"
+          id="header-invoice-container"
+          className="
+          flex flex-col flex-grow self-center my-12 
+          w-[327px] sm:w-[672px] lg:w-[730px]
+          gap-y-10"
         >
-          <AddInvoiceModal />
+          <Header />
+          <InvoicesRender />
         </div>
-      )}
 
+        {actionFormModal && (
+          <div
+            id="newInvoiceModal-container"
+            className="fixed z-30
+            flex flex-col sm:flex-row w-full h-full
+           bg-black bg-opacity-50 transition-colors duration-300"
+          >
+            <AddInvoiceModal />
+          </div>
+        )}
+      </div>
+      {/**
+       * w-screen h-screen top-[72px] 
+          sm:top-[80px] lg:top-0 lg:left-[103px] 
+           bg-11 dark:bg-12 transition-colors duration-300
+       */}
       {viewInvoice && (
         <div
           id="viewInvoiceModal-container"
-          className="absolute z-40 
-          flex flex-col w-screen h-screen overflow-x-hidden overflow-y-scroll top-[72px] sm:top-[80px] lg:top-0 lg:left-[103px] 
-           bg-11 dark:bg-12 transition-colors duration-300"
+          className="absolute z-20 
+          h-screen w-screen justify-center 
+          flex flex-col sm:flex-row overflow-y-scroll scrollbar-none
+          bg-11 dark:bg-12 transition-colors duration-300"
         >
           <InvoiceView />
           {modalOption && <ActionModal optionSelected={modalOption} />}
         </div>
       )}
-
-      <div
-        id="content"
-        className="flex flex-col lg:flex-grow-0 py-10 lg:py-16 w-[327px] sm:w-[672px] lg:w-[730px] gap-y-10 xl:w-[730px] mx-auto sm:p-12 md:p-none"
-      >
-        <Header />
-        <InvoicesRender />
-      </div>
     </div>
   );
 }
