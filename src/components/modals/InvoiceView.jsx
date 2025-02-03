@@ -13,15 +13,17 @@ const InvoiceView = () => {
       id="view-invoice-container"
       className="
       
-      grid
-      gap-y-3
-      sm:grid sm:grid-cols-2 mt-3  
-      lg:w-[730px]  lg:self-center
+      grid gap-y-3 sm:grid sm:grid-cols-2 
+      
+      w-full h-screen 
+      sm:rounded-r-2xl sm:w-[616px] px-3
+      overflow-y-scroll scrollbar-none
+      
       font-spartan text-black dark:text-white"
     >
       <div
         id="go-back"
-        className="flex flex-row h-[23px] mx-5 my-4 gap-5 items-center cursor-pointer col-span-2 row-start-1"
+        className="flex flex-row h-[23px] gap-5 items-center cursor-pointer col-span-2 row-start-1"
         onClick={() => invoicePressed(false)}
       >
         <img
@@ -34,7 +36,7 @@ const InvoiceView = () => {
 
       <div
         id="status-container"
-        className="flex flex-row h-[91px] px-5 mx-4 rounded-lg justify-between items-center
+        className="flex flex-row h-[91px] px-5 rounded-lg justify-between items-center
         col-span-2 row-start-2
         sm:justify-normal sm:gap-8 sm:col-span-1 sm:mr-0 sm:rounded-r-none
         dark:bg-3 bg-white "
@@ -45,7 +47,7 @@ const InvoiceView = () => {
 
       <div
         id="action-buttons"
-        className="col-span-2 rounded-xl mx-4 
+        className="col-span-2 rounded-xl 
         sm:col-span-1 sm:col-start-2 sm:row-start-2 sm:mr-4 sm:ml-0 sm:rounded-l-none
       bg-white dark:bg-3 "
       >
@@ -54,7 +56,7 @@ const InvoiceView = () => {
 
       <div
         id="info-container"
-        className="shadow-sm flex flex-col mx-4 dark:bg-3 bg-white p-5 rounded-lg gap-y-8 col-span-2 row-start-3"
+        className="shadow-sm flex flex-col dark:bg-3 bg-white p-5 rounded-lg gap-y-8 col-span-2 row-start-3"
       >
         <div
           id="id-project-name-client-adress"

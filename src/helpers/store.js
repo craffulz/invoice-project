@@ -48,6 +48,8 @@ const useStore = create((set, get) => {
      * The code below is all that you can do with an invoice.
      * Store invoices in an array, add an invoice to the array,
      * delete it or change the status from 'pending' to 'paid', or edit it.
+     *
+     *
      */
     invoices: initializeInvoices.length > 0 ? [...initializeInvoices] : [],
     invoicesExists: () => {

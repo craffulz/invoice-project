@@ -11,12 +11,12 @@ const InvoicesRender = () => {
   return (
     <div
       id="invoices"
-      className="flex flex-col gap-y-2 oveflow-scroll"
+      className="flex flex-col flex-grow gap-y-2 oveflow-scroll"
     >
       {(!invoicesExists() && (
         <div
           id="empty-invoices"
-          className="flex flex-col w-[206px] sm:w-[241px] text-center gap-y-14 self-center" 
+          className="flex flex-col flex-grow w-[206px] sm:w-[241px] text-center gap-y-14 self-center" 
         >
           <img src={empty} alt="there is no invoices yet" />
 
@@ -25,8 +25,8 @@ const InvoicesRender = () => {
               There is nothing here
             </h2>
             <p className="dark:text-5 font-spartan text-md self-center">
-              Create an invoice by clicking the{" "}
-              <strong>{width > 640 ? "New Invoice" : "New"}</strong> button and
+              Create an invoice by clicking the
+              <strong>{width > 640 ? " New Invoice" : "New"}</strong> button and
               get started.
             </p>
           </div>

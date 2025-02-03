@@ -22,7 +22,7 @@ function App() {
       <div
         id="content"
         className="relative
-        flex flex-col flex-grow overflow-y-scroll scrollbar-none"
+        flex flex-col flex-grow"
       >
         <div
           id="header-invoice-container"
@@ -38,31 +38,28 @@ function App() {
         {actionFormModal && (
           <div
             id="newInvoiceModal-container"
-            className="fixed z-30
+            className="fixed z-50
             flex flex-col sm:flex-row w-full h-full
            bg-black bg-opacity-50 transition-colors duration-300"
           >
             <AddInvoiceModal />
           </div>
         )}
+
+        {viewInvoice && (
+          <div
+            id="viewInvoiceModal-container"
+            className="pt-4 pb-24
+            lg:justify-center
+            fixed z-30
+            flex flex-col  w-full h-full
+           bg-11 dark:bg-12 transition-colors duration-300"
+          >
+            <InvoiceView />
+            {modalOption && <ActionModal optionSelected={modalOption} />}
+          </div>
+        )}
       </div>
-      {/**
-       * w-screen h-screen top-[72px] 
-          sm:top-[80px] lg:top-0 lg:left-[103px] 
-           bg-11 dark:bg-12 transition-colors duration-300
-       */}
-      {viewInvoice && (
-        <div
-          id="viewInvoiceModal-container"
-          className="absolute z-20 
-          h-screen w-screen justify-center 
-          flex flex-col sm:flex-row overflow-y-scroll scrollbar-none
-          bg-11 dark:bg-12 transition-colors duration-300"
-        >
-          <InvoiceView />
-          {modalOption && <ActionModal optionSelected={modalOption} />}
-        </div>
-      )}
     </div>
   );
 }
