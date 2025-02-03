@@ -12,22 +12,22 @@ function App() {
   return (
     <div
       id="body"
-      className=" 
-      flex flex-col lg:flex-row h-screen w-screen overflow-hidden
+      className=" h-screen
+      flex flex-col lg:flex-row overflow-hidden
       bg-11 dark:bg-12 transition-colors duration-300"
     >
-      <div id="navbar" className="flex">
+      
         <Navbar />
-      </div>
+     
       <div
         id="content"
-        className="relative
-        flex flex-col flex-grow overflow-y-scroll"
+        className="relative h-full
+        flex flex-col flex-grow overflow-hidden"
       >
         <div
           id="header-invoice-container"
           className="
-          flex flex-col flex-grow self-center my-12 
+          flex flex-col flex-grow self-center py-8 h-full 
           w-[327px] sm:w-[672px] lg:w-[730px]
           gap-y-10"
         >
@@ -52,7 +52,7 @@ function App() {
             className="pt-4 pb-24 sm:pb-0
             lg:justify-center
             fixed z-30
-            flex flex-col  w-full h-full
+            flex flex-col w-full h-full
            bg-11 dark:bg-12 transition-colors duration-300"
           >
             <InvoiceView />

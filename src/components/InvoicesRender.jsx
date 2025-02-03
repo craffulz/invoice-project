@@ -9,14 +9,11 @@ const InvoicesRender = () => {
     setWidth(window.innerWidth);
   });
   return (
-    <div
-      id="invoices"
-      className="flex flex-col flex-grow gap-y-2"
-    >
+    <div id="invoices" className="flex flex-col flex-grow gap-y-2 h-full ">
       {(!invoicesExists() && (
         <div
           id="empty-invoices"
-          className="flex flex-col flex-grow w-[206px] sm:w-[241px] text-center gap-y-14 self-center" 
+          className="flex flex-col flex-grow w-[206px] sm:w-[241px] text-center gap-y-14 self-center"
         >
           <img src={empty} alt="there is no invoices yet" />
 
@@ -32,7 +29,10 @@ const InvoicesRender = () => {
           </div>
         </div>
       )) || (
-        <div id="problematico" className="flex flex-col gap-y-4 ">
+        <div
+          id="problematico"
+          className="flex flex-col h-[500px] gap-y-4 overflow-y-scroll scrollbar-none"
+        >
           {invoices.map((invoice, index) => {
             return <Invoice key={index} invoice={invoice} />;
           })}
