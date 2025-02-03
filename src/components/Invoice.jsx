@@ -18,7 +18,8 @@ const Invoice = ({ invoice }) => {
   return (
     <div
       id="invoice-container"
-      className="grid grid-cols-2 grid-rows-4 sm:flex sm:flex-row flex-shrink-0 font-spartan h-[134px] sm:h-[72px] rounded-md shadow-md bg-white dark:bg-3 border border-transparent hover:border-1
+      className="grid grid-cols-2 grid-rows-4 sm:flex sm:flex-row flex-shrink-0 font-spartan h-[134px] sm:h-[72px] rounded-md 
+      shadow-md bg-white dark:bg-3 border border-transparent hover:border-1
       items-center justify-between px-7 transition-colors duration-300 cursor-pointer"
       onClick={() => {
         invoicePressed(invoice);

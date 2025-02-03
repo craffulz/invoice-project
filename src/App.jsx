@@ -22,7 +22,7 @@ function App() {
       <div
         id="content"
         className="relative
-        flex flex-col flex-grow"
+        flex flex-col flex-grow overflow-y-scroll"
       >
         <div
           id="header-invoice-container"
@@ -49,7 +49,7 @@ function App() {
         {viewInvoice && (
           <div
             id="viewInvoiceModal-container"
-            className="pt-4 pb-24
+            className="pt-4 pb-24 sm:pb-0
             lg:justify-center
             fixed z-30
             flex flex-col  w-full h-full

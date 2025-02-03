@@ -47,8 +47,8 @@ const InvoiceView = () => {
 
       <div
         id="action-buttons"
-        className="col-span-2 rounded-xl 
-        sm:col-span-1 sm:col-start-2 sm:row-start-2 sm:mr-4 sm:ml-0 sm:rounded-l-none
+        className="col-span-2 rounded-xl sm:px-5
+        sm:col-span-1 sm:col-start-2 sm:row-start-2 sm:ml-0 sm:rounded-l-none
       bg-white dark:bg-3 "
       >
         <ActionButtons />

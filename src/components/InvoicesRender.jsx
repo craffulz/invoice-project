@@ -11,7 +11,7 @@ const InvoicesRender = () => {
   return (
     <div
       id="invoices"
-      className="flex flex-col flex-grow gap-y-2 oveflow-scroll"
+      className="flex flex-col flex-grow gap-y-2"
     >
       {(!invoicesExists() && (
         <div
@@ -32,7 +32,7 @@ const InvoicesRender = () => {
           </div>
         </div>
       )) || (
-        <div id="problematico" className="flex flex-col gap-y-4">
+        <div id="problematico" className="flex flex-col gap-y-4 ">
           {invoices.map((invoice, index) => {
             return <Invoice key={index} invoice={invoice} />;
           })}
