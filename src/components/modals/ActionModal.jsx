@@ -18,7 +18,7 @@ const ActionModal = ({ optionSelected }) => {
   const option = (option) => {
     switch (option) {
       case "mark as PAID":
-        changeStatus(invoice.id, "paid");
+        changeStatus(invoice.id, "Paid");
         openModal();
         break;
       case "DELETE":

@@ -13,6 +13,35 @@ const useStore = create((set, get) => {
   const initializeInvoices = JSON.parse(localStorage.getItem("invoices")) || [];
 
   return {
+    /**
+     * filter is to filter the invoices that we want to list
+     */
+    filter: new Map([
+      ["Pending", false],
+      ["Paid", false],
+      ["Draft", false],
+    ]),
+    toggleFilter: (filterToToggle) => {
+      set((state) => {
+        const newFilter = new Map(state.filter);
+        newFilter.set(
+          filterToToggle.toString(),
+          !newFilter.get(filterToToggle)
+        );
+        return { filter: newFilter };
+      });
+    },
+    /**This one is to know if all filter options
+     *  are selected or unselected.
+     * In both cases we must show all options */
+    allfilter: () => {
+      set((state) => {
+        const allEqual = [...state.filter.values()];
+        const areAllEqual = allEqual.every((value) => value === allEqual[0]);
+        return { allEqual: areAllEqual };
+      });
+    },
+
     //ESTE ES EL QUE HAY QUE CAMBIAR
     /**Este estado es para mostrar el modal de 'DELETE' */
     modalOption: false,

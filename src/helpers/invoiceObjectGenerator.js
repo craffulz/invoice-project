@@ -18,6 +18,6 @@ export const invoiceObjectGenerator = ( invoice, id ) => {
     paymentDue: paymentDue,
     total: total,
     ...invoice,
-    status: 'pending'
+    status: 'Pending'
   };
 };

@@ -5,11 +5,11 @@ const Status = ({ status }) => {
     <div
       id="stateIndicator"
       className={`w-[104px] h-10 flex flex-row items-center justify-center text-center rounded-md gap-2 ${
-        status === "pending"
+        status === "Pending"
           ? "bg-pendingBG dark:bg-pending dark:bg-opacity-10 text-pending"
-          : status === "draft"
+          : status === "Draft"
           ? "bg-draftBG text-draft"
-          : status === "paid"
+          : status === "Paid"
           ? "bg-paidBG dark:bg-paid dark:bg-opacity-15 text-paid"
           : ""
       }`}
@@ -17,11 +17,11 @@ const Status = ({ status }) => {
       <div
         id="dot"
         className={`w-2 h-2 rounded-full ${
-          status === "pending"
+          status === "Pending"
             ? "bg-pending"
-            : status === "draft"
+            : status === "Draft"
             ? "bg-draft"
-            : status === "paid"
+            : status === "Paid"
             ? "bg-paid"
             : ""
         }`}

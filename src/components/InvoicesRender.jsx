@@ -3,11 +3,18 @@ import empty from "./../assets/illustration-empty.svg";
 import Invoice from "./Invoice";
 import { useState } from "react";
 const InvoicesRender = () => {
-  const { invoicesExists, invoices } = useStore();
+  const { invoicesExists, invoices, filter } = useStore();
   const [width, setWidth] = useState(null);
+  const fhalfhal = [...filter.values()].every(
+    (value) => value === [...filter.values()][0]
+  );
+
+  console.log(fhalfhal);
+
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);
   });
+
   return (
     <div id="invoices" className="flex flex-col flex-grow gap-y-2 h-full ">
       {(!invoicesExists() && (
@@ -33,9 +40,12 @@ const InvoicesRender = () => {
           id="problematico"
           className="flex flex-col h-[500px] gap-y-4 overflow-y-scroll scrollbar-none"
         >
-          {invoices.map((invoice, index) => {
-            return <Invoice key={index} invoice={invoice} />;
-          })}
+          {invoices.map(
+            (invoice, index) =>
+              (filter.get(invoice.status) || fhalfhal) && (
+                <Invoice key={index} invoice={invoice} />
+              )
+          )}
         </div>
       )}
     </div>

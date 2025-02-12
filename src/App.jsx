@@ -12,7 +12,7 @@ function App() {
   return (
     <div
       id="body"
-      className=" h-screen
+      className="h-screen
       flex flex-col lg:flex-row overflow-hidden
       bg-11 dark:bg-12 transition-colors duration-300"
     >
@@ -21,12 +21,12 @@ function App() {
      
       <div
         id="content"
-        className=" h-full
+        className="h-full
         flex flex-col flex-grow overflow-hidden"
       >
         <div
           id="header-invoice-container"
-          className="
+          className="relative
           flex flex-col flex-grow self-center py-8 h-full 
           w-[327px] sm:w-[672px] lg:w-[730px]
           gap-y-10"
