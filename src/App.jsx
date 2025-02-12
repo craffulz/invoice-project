@@ -21,12 +21,12 @@ function App() {
      
       <div
         id="content"
-        className="relative h-full
+        className=" h-full
         flex flex-col flex-grow overflow-hidden"
       >
         <div
           id="header-invoice-container"
-          className="relative
+          className="
           flex flex-col flex-grow self-center py-8 h-full 
           w-[327px] sm:w-[672px] lg:w-[730px]
           gap-y-10"
