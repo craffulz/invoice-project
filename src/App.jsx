@@ -26,7 +26,7 @@ function App() {
       >
         <div
           id="header-invoice-container"
-          className="
+          className="relative
           flex flex-col flex-grow self-center py-8 h-full 
           w-[327px] sm:w-[672px] lg:w-[730px]
           gap-y-10"
