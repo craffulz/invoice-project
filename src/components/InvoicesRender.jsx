@@ -30,8 +30,8 @@ const InvoicesRender = () => {
               There is nothing here
             </h2>
             <p className="dark:text-5 font-spartan text-md self-center">
-              Create an invoice by clicking the
-              <strong>{width > 640 ? " New Invoice" : "New"}</strong> button and
+              Create an invoice by clicking the&nbsp;
+              <strong>{width > 640 ? "New Invoice" : "New"}</strong> button and
               get started.
             </p>
           </div>
