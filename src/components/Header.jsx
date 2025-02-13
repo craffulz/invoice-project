@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div
       id="header-container"
-      className="flex flex-row flex-shrink-0 justify-between items-center
+      className="flex flex-row flex-shrink-0 justify-between items-center 
                 transition-colors duration-500 overflow-hidden"
     >
       <div id="title-counter" className="h-auto flex flex-col overflow-hidden">

@@ -8,7 +8,6 @@ const FilterBy = () => {
   const { filter, toggleFilter } = useStore();
   const [drop, setDrop] = useState(false);
 
-  
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);
   });

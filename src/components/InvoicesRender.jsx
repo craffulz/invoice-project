@@ -14,7 +14,7 @@ const InvoicesRender = () => {
   });
 
   return (
-    <div id="invoices" className="flex flex-col gap-y-2 h-full justify-center">
+    <div id="invoices" className="flex flex-col gap-y-2 justify-center flex-grow">
       {(!invoicesExists() && (
         <div
           id="empty-invoices"
@@ -36,7 +36,7 @@ const InvoicesRender = () => {
       )) || (
         <div
           id="problematico"
-          className="flex flex-col h-[500px] gap-y-4 overflow-y-scroll scrollbar-none "
+          className="flex flex-col h-[550px] gap-y-4 overflow-y-scroll scrollbar-none "
         >
           {invoices.map(
             (invoice, index) =>

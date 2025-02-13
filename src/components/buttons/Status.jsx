@@ -8,7 +8,7 @@ const Status = ({ status }) => {
         status === "Pending"
           ? "bg-pendingBG dark:bg-pending dark:bg-opacity-10 text-pending"
           : status === "Draft"
-          ? "bg-draftBG text-draft"
+          ? "bg-draftBG text-draft bg-opacity-15"
           : status === "Paid"
           ? "bg-paidBG dark:bg-paid dark:bg-opacity-15 text-paid"
           : ""
