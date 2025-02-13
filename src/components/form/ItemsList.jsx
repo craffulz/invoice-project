@@ -9,7 +9,6 @@ const ItemsList = () => {
     name: "itemList",
   });
 
-  console.log("fields del renderizador de fields", fields);
   return (
     <div
       id="items-list"

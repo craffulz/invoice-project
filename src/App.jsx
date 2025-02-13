@@ -21,7 +21,7 @@ function App() {
      
       <div
         id="content"
-        className="h-full
+        className="h-full 
         flex flex-col flex-grow overflow-hidden"
       >
         <div

@@ -9,14 +9,12 @@ const InvoicesRender = () => {
     (value) => value === [...filter.values()][0]
   );
 
-  console.log(fhalfhal);
-
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);
   });
 
   return (
-    <div id="invoices" className="flex flex-col flex-grow gap-y-2 h-full ">
+    <div id="invoices" className="flex flex-col gap-y-2 h-full justify-center">
       {(!invoicesExists() && (
         <div
           id="empty-invoices"
@@ -38,7 +36,7 @@ const InvoicesRender = () => {
       )) || (
         <div
           id="problematico"
-          className="flex flex-col h-[500px] gap-y-4 overflow-y-scroll scrollbar-none"
+          className="flex flex-col h-[500px] gap-y-4 overflow-y-scroll scrollbar-none "
         >
           {invoices.map(
             (invoice, index) =>

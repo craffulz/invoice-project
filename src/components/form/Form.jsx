@@ -13,9 +13,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { invoiceObjectGenerator } from "../../helpers/invoiceObjectGenerator";
 import { idGenerator } from "../../helpers/idGenerator";
 const Form = () => {
-
-  console.log('Se renderiza el puto formulario')
-
   const {
     openFormModal,
     invoicePressed,
@@ -32,6 +29,15 @@ const Form = () => {
     resolver: zodResolver(schema),
     defaultValues: defValues,
   });
+
+  const handleDraft = () => {
+    console.log(methods.getValues());
+    const id = idGenerator();
+    //Enviamos los datos a la store
+    addInvoice(invoiceObjectGenerator(methods.getValues(), id, true));
+    //Al hacer submit cerramos el formulario
+    openFormModal(false);
+  };
 
   const onSubmit = (data) => {
     console.log("form submited", data);
@@ -87,7 +93,10 @@ const Form = () => {
               id="draft-save-container"
               className="flex self-end flex-row gap-2"
             >
-              <SaveAsDraft />
+              <button type="button" onClick={handleDraft}>
+                <SaveAsDraft />
+              </button>
+
               <SaveAndSend />
             </div>
           </div>
