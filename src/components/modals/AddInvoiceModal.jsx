@@ -1,8 +1,10 @@
 import useStore from "../../helpers/store";
 import Form from "../form/Form";
+import arrowLeft from "../../assets/icon-arrow-left.svg";
 
 const AddInvoiceModal = () => {
   const {
+    openFormModal,
     actionFormModal,
     viewInvoice: { id },
   } = useStore();
@@ -18,6 +20,19 @@ const AddInvoiceModal = () => {
       
        bg-white dark:bg-12 font-spartan "
     >
+      <div
+        id="go-back"
+        className="flex flex-row h-[23px] gap-5 items-center cursor-pointer col-span-2 row-start-1"
+        onClick={() => openFormModal(false)}
+      >
+        <img
+          src={arrowLeft}
+          alt="go back arrow"
+          className="flex h-2 self-center"
+        />
+        <p className="flex font-spartan font-bold dark:text-white">Go back</p>
+      </div>
+
       <h1 className="font-bold dark:text-white text-xl">
         {actionFormModal === "edit" ? (
           <>

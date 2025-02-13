@@ -32,47 +32,52 @@ const FilterBy = () => {
         />
       </div>
 
-      {drop && (
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          id="dropdown"
-          className="absolute top-[100px] right-36 flex flex-col
+      <motion.div
+        initial={{ opacity: 0, y: -350 }}
+        animate={
+          drop
+            ? {
+                opacity: 1,
+                y: 0,
+              }
+            : { opacity: 0, y: -350 }
+        }
+        id="dropdown"
+        className="absolute top-[100px] right-36 flex flex-col
            bg-white dark:bg-4 p-3 w-[192px] gap-y-2 rounded-lg shadow-lg shadow-5 dark:shadow-none 
           transition-colors duration-500"
-        >
-          {[...filter].map(([value, active], index) => {
-            return (
-              <ul
-                id="option"
-                key={index}
-                className="group flex flex-row gap-2 items-center"
-                onClick={() => {
-                  toggleFilter(value);
-                  console.log(typeof value);
-                }}
+      >
+        {[...filter].map(([value, active], index) => {
+          return (
+            <ul
+              id="option"
+              key={index}
+              className="group flex flex-row gap-2 items-center"
+              onClick={() => {
+                toggleFilter(value);
+                console.log(typeof value);
+              }}
+            >
+              <div
+                id="mini-cage"
+                className={`child group-hover:border group-hover:border-1 flex w-4 h-4 rounded-sm ${
+                  active ? "bg-1" : "bg-5 dark:bg-3"
+                } items-center justify-center`}
               >
-                <div
-                  id="mini-cage"
-                  className={`child group-hover:border group-hover:border-1 flex w-4 h-4 rounded-sm ${
-                    active ? "bg-1" : "bg-5 dark:bg-3"
-                  } items-center justify-center`}
-                >
-                  {active && (
-                    <img id="check-mark" src={check} alt="selected option" />
-                  )}
-                </div>
-                <span
-                  id="option-name"
-                  className="flex flex-col font-spartan font-bold text-center items-center dark:text-white"
-                >
-                  {value}
-                </span>
-              </ul>
-            );
-          })}
-        </motion.div>
-      )}
+                {active && (
+                  <img id="check-mark" src={check} alt="selected option" />
+                )}
+              </div>
+              <span
+                id="option-name"
+                className="flex flex-col font-spartan font-bold text-center items-center dark:text-white"
+              >
+                {value}
+              </span>
+            </ul>
+          );
+        })}
+      </motion.div>
     </button>
   );
 };

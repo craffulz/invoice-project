@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 import plugin from "tailwindcss-pseudo-elements";
-import scrollbar from "tailwind-scrollbar";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -34,12 +33,11 @@ export default {
         pendingBG: "#FFF8F0",
         draftBG: "#F3F3F5",
         paidBG: "#F3FCF9",
-        itemList: '#777F98'
+        itemList: "#777F98",
       },
     },
   },
   plugins: [
-    scrollbar,
     plugin({
       customPseudoClasses: ["autofill"],
     }),

@@ -2,15 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Spartan';
-  src: url('./assets/fonts/Spartan.ttf');
+  font-family: "Spartan";
+  src: url("./assets/fonts/Spartan.ttf");
   font-style: normal;
 }
 
 @font-face {
   font-family: "SpartanBold";
-  src: url('./assets/fonts/Spartan.ttf');
+  src: url("./assets/fonts/Spartan.ttf");
   font-style: italic;
+}
+
+#problematico {
+  --sb-track-color: #b8bbbd; /* Color claro */
+  --sb-thumb-color: #e8dfdf;
+  --sb-size: 5px;
+}
+
+#problematico::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+#problematico::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 7px;
+}
+
+#problematico::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 7px;
+  border: 1px solid #ecdddd;
+}
+
+/* Cambiar el color del track en dark mode */
+@media (prefers-color-scheme: dark) {
+  #problematico {
+    --sb-track-color: #1E2139; /* Color oscuro */
+  }
+}
+
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+  #problematico {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }

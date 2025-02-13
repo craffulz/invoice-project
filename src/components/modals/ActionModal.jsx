@@ -13,8 +13,6 @@ const ActionModal = ({ optionSelected }) => {
     invoicePressed,
   } = useStore();
 
-
-
   const option = (option) => {
     switch (option) {
       case "mark as PAID":
@@ -25,6 +23,8 @@ const ActionModal = ({ optionSelected }) => {
         deleteInvoice(invoice.id);
         openModal();
         invoicePressed(false);
+        break;
+      case "draft":
         break;
       case "edit":
         break;
@@ -41,25 +41,39 @@ const ActionModal = ({ optionSelected }) => {
         className="w-[300px] h-[200px] flex flex-col items-center justify-center bg-11 p-8 gap-y-8 rounded-xl"
       >
         <div id="messageModal" className="text-center">
-          <p>Are you sure you want to {optionSelected} this invoice?</p>
+          {optionSelected === "draft" ? (
+            <p>It is not possible to &apos;mark as paid&apos; a draft !</p>
+          ) : (
+            <p>Are you sure you want to {optionSelected} this invoice?</p>
+          )}
         </div>
-        <div id="buttons" className="flex flex-row gap-12">
-          <button
-            onClick={() => {
-              option(optionSelected);
-              openModal(false);
-            }}
-            className="font-bold text-white w-16 h-12 bg-9 rounded-xl hover:bg-10"
-          >
-            Yes
-          </button>
+
+        {optionSelected === "draft" ? (
           <button
             onClick={() => openModal(false)}
-            className="font-semibold text-white w-16 h-12 bg-7 rounded-xl"
+            className="font-bold text-white w-16 h-12 bg-9 rounded-xl hover:bg-10"
           >
-            No
+            Close
           </button>
-        </div>
+        ) : (
+          <div id="buttons" className="flex flex-row gap-12">
+            <button
+              onClick={() => {
+                option(optionSelected);
+                openModal(false);
+              }}
+              className="font-bold text-white w-16 h-12 bg-9 rounded-xl hover:bg-10"
+            >
+              Yes
+            </button>
+            <button
+              onClick={() => openModal(false)}
+              className="font-semibold text-white w-16 h-12 bg-7 rounded-xl"
+            >
+              No
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
