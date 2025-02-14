@@ -27,38 +27,7 @@ Web application SPA for invoice management, featuring filtering options, payment
 📤 **Send Invoices to Clients** – Generate and send invoices directly to your customers via email.  
 ⏳ **Due Date Reminders** – Automatically notify users when an invoice is about to expire.  
 📊 **Invoice Status Tracking** – Keep track of paid, pending, and overdue invoices.  
-💾 **Data Persistence** – All invoice data is securely stored and remains accessible.  
-## Usage/Examples
-
-### **1️⃣ Open the Application**  
-- Open the app using `http://localhost:3000`  
-- Or visit the live demo provided in 'Live Demo' section
-
-### **2️⃣ Add a New Invoice**  
-- Click the **"New Invoice"** button.  
-- Fill in the form with the client’s name, amount, and due date.  
-- Click **"Save"** to store the invoice.  
-
-### **3️⃣ Add Another Invoice with a Different Client Name**  
-- Try adding a second invoice with a different client name.  
-- You can also add multiple items inside the invoice.  
-
-### **4️⃣ Create a Draft Invoice**  
-- Click **"New Invoice"**, but this time, leave most fields empty.  
-- A draft invoice does not require all fields to be filled.  
-- Save it as a draft and check how it appears in the invoice list.  
-
-### **5️⃣ Test the Filtering Options**  
-- Use the **filters** to view only paid, pending, or draft invoices.  
-- Try searching for invoices by client name.  
-
-### **6️⃣ Open an Invoice and Test Actions**  
-- Click on an invoice from the list.  
-- Try using the available actions:  
-  ❌ **Delete** – Remove the invoice permanently.  
-  ✏️ **Edit** – Modify the invoice details.  
-  💰 **Mark as Paid** – Update the status to "Paid".  
-## Installation  
+💾 **Data Persistence** – All invoice data is securely stored and remains accessible.  ## Installation  
 
 ### **Prerequisites**  
 Before installing, make sure you have the following installed on your system:  
@@ -89,6 +58,37 @@ Before installing, make sure you have the following installed on your system:
   ```bash
     http://localhost:3000 or your default localhost
 
+
+## Usage/Examples
+
+### **1️⃣ Open the Application**  
+- Open the app using `http://localhost:3000`  
+- Or visit the live demo provided in 'Live Demo' section
+
+### **2️⃣ Add a New Invoice**  
+- Click the **"New Invoice"** button.  
+- Fill in the form with the client’s name, amount, and due date.  
+- Click **"Save"** to store the invoice.  
+
+### **3️⃣ Add Another Invoice with a Different Client Name**  
+- Try adding a second invoice with a different client name.  
+- You can also add multiple items inside the invoice.  
+
+### **4️⃣ Create a Draft Invoice**  
+- Click **"New Invoice"**, but this time, leave most fields empty.  
+- A draft invoice does not require all fields to be filled.  
+- Save it as a draft and check how it appears in the invoice list.  
+
+### **5️⃣ Test the Filtering Options**  
+- Use the **filters** to view only paid, pending, or draft invoices.  
+- Try searching for invoices by client name.  
+
+### **6️⃣ Open an Invoice and Test Actions**  
+- Click on an invoice from the list.  
+- Try using the available actions:  
+  ❌ **Delete** – Remove the invoice permanently.  
+  ✏️ **Edit** – Modify the invoice details.  
+  💰 **Mark as Paid** – Update the status to "Paid".  
 
 ## Tech Stack
 
