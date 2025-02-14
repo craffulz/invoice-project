@@ -13,14 +13,14 @@ Web application SPA for invoice management, featuring filtering options, payment
 - [🛠️ Project Status](#project-status)
 - [👩‍💻 Authors](#authors)
 - [💬 Feedback](#feedback)
-## 🌐Live Demo
+## Live Demo
 
 👉 [Try it here!](https://invoice-project-craffulzs-projects.vercel.app/) 👈  
 [_(Available in the "Projects" section of my portfolio.)_](https://www.hamzachikri.online) 
 
 
 
-## 🚀Features  
+## Features  
 
 ✅ **Invoice Management** – Easily organize and categorize invoices for better tracking.  
 📂 **Filtering & Searching** – Quickly find invoices using filters based on status, date, or client.  
@@ -28,7 +28,7 @@ Web application SPA for invoice management, featuring filtering options, payment
 ⏳ **Due Date Reminders** – Automatically notify users when an invoice is about to expire.  
 📊 **Invoice Status Tracking** – Keep track of paid, pending, and overdue invoices.  
 💾 **Data Persistence** – All invoice data is securely stored and remains accessible.  
-## 👉Usage/Examples
+## Usage/Examples
 
 ### **1️⃣ Open the Application**  
 - Open the app using `http://localhost:3000`  
@@ -58,7 +58,7 @@ Web application SPA for invoice management, featuring filtering options, payment
   ❌ **Delete** – Remove the invoice permanently.  
   ✏️ **Edit** – Modify the invoice details.  
   💰 **Mark as Paid** – Update the status to "Paid".  
-## 🛠Installation  
+## Installation  
 
 ### **Prerequisites**  
 Before installing, make sure you have the following installed on your system:  
@@ -90,14 +90,14 @@ Before installing, make sure you have the following installed on your system:
     http://localhost:3000 or your default localhost
 
 
-## 🧰Tech Stack
+## Tech Stack
 
 - ⚡ **Vite**
 - ⚛️ **React**
 - 🟨 **JavaScript**
 - 🌪️ **TailwindCSS**
 
-## 🛠️Project Status
+## Project Status
 
 - 🚧 **In Development**: The project is actively being developed.
 - 📋 **Features Pending**:
@@ -111,7 +111,7 @@ Before installing, make sure you have the following installed on your system:
 - [@craffulz](https://www.github.com/craffulz)
 
 
-## 💬Feedback
+## Feedback
 
 If you have any feedback, please reach out to hamzdevel@gmail.com
 
