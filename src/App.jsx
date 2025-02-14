@@ -6,10 +6,14 @@ import InvoiceView from "./components/modals/InvoiceView";
 import useStore from "./helpers/store";
 import ActionModal from "./components/modals/ActionModal";
 
-
-
 function App() {
   const { viewInvoice, modalOption, actionFormModal } = useStore();
+  const handleBackButton = () => {
+    window.history.pushState(null, "", window.location.href);
+    console.log("Se bloquea el retroceso en la page");
+  };
+  window.history.pushState(null, "", window.location.href);
+  window.addEventListener("popstate", handleBackButton);
 
   return (
     <div
@@ -18,9 +22,8 @@ function App() {
       flex flex-col lg:flex-row overflow-hidden
       bg-11 dark:bg-12 transition-colors duration-300"
     >
-      
-        <Navbar />
-     
+      <Navbar />
+
       <div
         id="content"
         className="h-full 
