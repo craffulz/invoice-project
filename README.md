@@ -23,7 +23,7 @@ Web application SPA for invoice management, featuring filtering options, payment
 
 ### **1️⃣ Open the Application**  
 - Open the app using `http://localhost:3000`  
-- Or visit the live version in my portfolio: [www.hamzachikri.online](www.hamzachikri.online) under the **"Projects"** section.  
+- Or visit the live demo provided in 'Live Demo' section
 
 ### **2️⃣ Add a New Invoice**  
 - Click the **"New Invoice"** button.  
