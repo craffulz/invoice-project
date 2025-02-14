@@ -27,7 +27,8 @@ Web application SPA for invoice management, featuring filtering options, payment
 📤 **Send Invoices to Clients** – Generate and send invoices directly to your customers via email.  
 ⏳ **Due Date Reminders** – Automatically notify users when an invoice is about to expire.  
 📊 **Invoice Status Tracking** – Keep track of paid, pending, and overdue invoices.  
-💾 **Data Persistence** – All invoice data is securely stored and remains accessible.  ## Installation  
+💾 **Data Persistence** – All invoice data is securely stored and remains accessible.  
+## Installation  
 
 ### **Prerequisites**  
 Before installing, make sure you have the following installed on your system:  
