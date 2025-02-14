@@ -106,7 +106,7 @@ Before installing, make sure you have the following installed on your system:
   - User authentication system
 - 🎬 **Live Demo**: A basic demo is available with the usage example shown above.
 - 🤝 **Contributions Welcome**: If you'd like to collaborate or contribute to the project, feel free to open an issue or pull request. All contributions are welcome!
-##Authors
+## Authors
 
 - [@craffulz](https://www.github.com/craffulz)
 
