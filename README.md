@@ -4,6 +4,15 @@
 Web application SPA for invoice management, featuring filtering options, payment status updates, and invoice sending to clients efficiently.
 
 
+## 📑 Table of Contents
+- [🌐 Live Demo](#-live-demo)
+- [🚀 Features](#-features)
+- [👉 Usage/Examples](#usageexamples)
+- [🛠 Installation](#installation)
+- [🧰 Tech Stack](#tech-stack)
+- [🛠️ Project Status](#project-status)
+- [👩‍💻 Authors](#authors)
+- [💬 Feedback](#feedback)
 ## 🌐 Live Demo
 
 👉 [Try it here!](https://invoice-project-craffulzs-projects.vercel.app/) 👈  
