@@ -13,6 +13,9 @@ function App() {
 
   const handleBackButton = () => {
     window.history.pushState(null, "", window.location.href);
+    alert(
+      "To navigate through the app, please use the buttons provided in the interface. Thank you!"
+    );
   };
 
   // Evita que el usuario retroceda en el historial
