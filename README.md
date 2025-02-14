@@ -1,26 +1,26 @@
 
-# 📑 Invoices Management App
+# 📑Invoices Management App
 
 Web application SPA for invoice management, featuring filtering options, payment status updates, and invoice sending to clients efficiently.
 
 
-## 📑 Table of Contents
-- [🌐 Live Demo](#-live-demo)
-- [🚀 Features](#-features)
+## 📑Table of Contents
+- [🌐 Live Demo](#live-demo)
+- [🚀 Features](#features)
 - [👉 Usage/Examples](#usageexamples)
 - [🛠 Installation](#installation)
 - [🧰 Tech Stack](#tech-stack)
 - [🛠️ Project Status](#project-status)
 - [👩‍💻 Authors](#authors)
 - [💬 Feedback](#feedback)
-## 🌐 Live Demo
+## 🌐Live Demo
 
 👉 [Try it here!](https://invoice-project-craffulzs-projects.vercel.app/) 👈  
 [_(Available in the "Projects" section of my portfolio.)_](https://www.hamzachikri.online) 
 
 
 
-## 🚀 Features  
+## 🚀Features  
 
 ✅ **Invoice Management** – Easily organize and categorize invoices for better tracking.  
 📂 **Filtering & Searching** – Quickly find invoices using filters based on status, date, or client.  
@@ -28,7 +28,7 @@ Web application SPA for invoice management, featuring filtering options, payment
 ⏳ **Due Date Reminders** – Automatically notify users when an invoice is about to expire.  
 📊 **Invoice Status Tracking** – Keep track of paid, pending, and overdue invoices.  
 💾 **Data Persistence** – All invoice data is securely stored and remains accessible.  
-## 👉 Usage/Examples
+## 👉Usage/Examples
 
 ### **1️⃣ Open the Application**  
 - Open the app using `http://localhost:3000`  
@@ -58,7 +58,7 @@ Web application SPA for invoice management, featuring filtering options, payment
   ❌ **Delete** – Remove the invoice permanently.  
   ✏️ **Edit** – Modify the invoice details.  
   💰 **Mark as Paid** – Update the status to "Paid".  
-## 🛠 Installation  
+## 🛠Installation  
 
 ### **Prerequisites**  
 Before installing, make sure you have the following installed on your system:  
@@ -90,14 +90,14 @@ Before installing, make sure you have the following installed on your system:
     http://localhost:3000 or your default localhost
 
 
-## 🧰 Tech Stack
+## 🧰Tech Stack
 
 - ⚡ **Vite**
 - ⚛️ **React**
 - 🟨 **JavaScript**
 - 🌪️ **TailwindCSS**
 
-## 🛠️ Project Status
+## 🛠️Project Status
 
 - 🚧 **In Development**: The project is actively being developed.
 - 📋 **Features Pending**:
@@ -106,12 +106,12 @@ Before installing, make sure you have the following installed on your system:
   - User authentication system
 - 🎬 **Live Demo**: A basic demo is available with the usage example shown above.
 - 🤝 **Contributions Welcome**: If you'd like to collaborate or contribute to the project, feel free to open an issue or pull request. All contributions are welcome!
-## 👩‍💻 Authors
+##Authors
 
 - [@craffulz](https://www.github.com/craffulz)
 
 
-## 💬 Feedback
+## 💬Feedback
 
 If you have any feedback, please reach out to hamzdevel@gmail.com
 
