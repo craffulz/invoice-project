@@ -5,15 +5,36 @@ import AddInvoiceModal from "./components/modals/AddInvoiceModal";
 import InvoiceView from "./components/modals/InvoiceView";
 import useStore from "./helpers/store";
 import ActionModal from "./components/modals/ActionModal";
-
+import { useState, useEffect } from "react";
 function App() {
   const { viewInvoice, modalOption, actionFormModal } = useStore();
-  const handleBackButton = () => {
+
+  /**Logica para que evitar el comportamiento default al darle al boton de atras */
+  const [counter, setCounter] = useState(0);
+  console.log(counter);
+  useEffect(() => {
+    const handleBackButton = () => {
+      if (counter === 0) {
+        console.log("Entro aqui", counter);
+        window.history.pushState(null, "", window.location.href);
+        alert(
+          "To navigate through the App, use the buttons in the interface.\n" +
+            "To exit, close this popup and press 'back' again."
+        );
+        setCounter(1);
+      } else {
+        console.log("Thala!");
+      }
+    };
+
+    // Evita que el usuario retroceda en el historial
     window.history.pushState(null, "", window.location.href);
-    console.log("Se bloquea el retroceso en la page");
-  };
-  window.history.pushState(null, "", window.location.href);
-  window.addEventListener("popstate", handleBackButton);
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, [counter]);
 
   return (
     <div
