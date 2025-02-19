@@ -14,22 +14,34 @@
   font-style: italic;
 }
 
-#problematico {
+#problematico,
+#items-list,
+#view-invoice-container,
+#newInvoiceModal {
   --sb-track-color: #b8bbbd; /* Color claro */
   --sb-thumb-color: #e8dfdf;
   --sb-size: 5px;
 }
 
-#problematico::-webkit-scrollbar {
+#problematico::-webkit-scrollbar,
+#items-list::-webkit-scrollbar,
+#view-invoice-container::-webkit-scrollbar,
+#newInvoiceModal::-webkit-scrollbar {
   width: var(--sb-size);
 }
 
-#problematico::-webkit-scrollbar-track {
+#problematico::-webkit-scrollbar-track,
+#items-list::-webkit-scrollbar-track,
+#view-invoice-container::-webkit-scrollbar-track,
+#newInvoiceModal::-webkit-scrollbar-track {
   background: var(--sb-track-color);
   border-radius: 7px;
 }
 
-#problematico::-webkit-scrollbar-thumb {
+#problematico::-webkit-scrollbar-thumb,
+#items-list::-webkit-scrollbar-thumb,
+#view-invoice-container::-webkit-scrollbar-thumb,
+#newInvoiceModal::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 7px;
   border: 1px solid #ecdddd;
@@ -37,14 +49,20 @@
 
 /* Cambiar el color del track en dark mode */
 @media (prefers-color-scheme: dark) {
-  #problematico {
+  #problematico,
+  #items-list,
+  #view-invoice-container,
+  #newInvoiceModal {
     --sb-track-color: #1E2139; /* Color oscuro */
   }
 }
 
 /* Firefox */
 @supports not selector(::-webkit-scrollbar) {
-  #problematico {
+  #problematico,
+  #items-list,
+  #view-invoice-container,
+  #newInvoiceModal {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }

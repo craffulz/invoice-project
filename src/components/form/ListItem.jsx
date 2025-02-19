@@ -36,13 +36,13 @@ const ListItem = ({ index, remove }) => {
 
       <label
         id="item-quantity"
-        className="text-sm text-7 font-semibold dark:text-5 col-span-2 sm:col-span-1"
+        className="text-sm text-7 font-semibold dark:text-5 col-span-2 sm:col-span-1 "
       >
         Qty.
         <input
           {...register(`itemList.${index}.quantity`)}
           className="w-full border dark:border-0 rounded-md h-[48px] text-black dark:text-white dark:bg-4
-                   bg-white px-5"
+                   bg-white px-2"
         />
         {errors.itemList?.[index]?.quantity && (
           <small className="text-red-500 font-normal text-sm">

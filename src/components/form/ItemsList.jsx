@@ -12,7 +12,7 @@ const ItemsList = () => {
   return (
     <div
       id="items-list"
-      className="flex flex-col mt-4 overflow-y-scroll scrollbar-none"
+      className="flex flex-col mt-4"
     >
       <h2 className="font-bold text-itemList mb-3">Item List</h2>
       {fields.map((field, index) => {
