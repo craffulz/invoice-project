@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node --watch invoice-app-db/src/index.js",
+    "start": "node --watch invoice-app-db/index.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
