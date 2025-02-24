@@ -1,5 +1,5 @@
-import arrowDown from "./../../assets/icon-arrow-down.svg";
-import check from "./../../assets/icon-check.svg";
+import arrowDown from "../../assets/icon-arrow-down.svg";
+import check from "../../assets/icon-check.svg";
 import { useState } from "react";
 import { motion } from "motion/react";
 import useStore from "../../helpers/store";

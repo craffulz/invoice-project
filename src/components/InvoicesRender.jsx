@@ -1,5 +1,5 @@
 import useStore from "../helpers/store";
-import empty from "./../assets/illustration-empty.svg";
+import empty from "../assets/illustration-empty.svg";
 import Invoice from "./Invoice";
 import { useState } from "react";
 const InvoicesRender = () => {

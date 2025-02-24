@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import useStore from "../helpers/store";
 
-import arrow from "./../assets/icon-arrow-right.svg";
+import arrow from "../assets/icon-arrow-right.svg";
 import Status from "./buttons/Status";
 
 const Invoice = ({ invoice }) => {

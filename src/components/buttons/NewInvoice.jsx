@@ -1,4 +1,4 @@
-import plus from "./../../assets/icon-plus.svg";
+import plus from "../../assets/icon-plus.svg";
 
 import { useEffect, useState } from "react";
 import useStore from "../../helpers/store";

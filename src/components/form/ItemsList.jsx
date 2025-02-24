@@ -1,5 +1,5 @@
 import ListItem from "./ListItem";
-import AddNewItem from "./../buttons/AddNewItem";
+import AddNewItem from "../buttons/AddNewItem";
 import { useFieldArray, useFormContext } from "react-hook-form";
 
 const ItemsList = () => {
